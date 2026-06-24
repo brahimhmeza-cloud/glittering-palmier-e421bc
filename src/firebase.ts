@@ -1,8 +1,8 @@
 // ===== Firebase Configuration =====
 // هذا الملف يوفر اتصال بقاعدة البيانات
 
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set, get, onValue } from 'firebase/database';
+import { initializeApp } from 'firebase/app'; 
+import { import { getFirestore } from 'firebase/firestore';
 
 // ===== الإعدادات - تم تحديثها =====
 const firebaseConfig = {
