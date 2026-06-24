@@ -1,0 +1,29 @@
+# Priime Store Morocco - برايم ستور المغرب
+# https://priimestore.ma
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://priimestore.ma/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
+
+# Allow all search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Disallow admin pages
+Disallow: /admin
+Disallow: /cart
+Disallow: /checkout
