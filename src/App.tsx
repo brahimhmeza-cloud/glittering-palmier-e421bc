@@ -1,3 +1,6 @@
+import { db } from './firebase'; 
+import { collection, getDocs } from 'firebase/firestore';
+import { useEffect, useState } from 'react';
 import { useEffect } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { useStore } from './store/useStore';
@@ -13,10 +16,23 @@ import AdminPanel from './components/AdminPanel';
 import MyOrders from './components/MyOrders';
 
 function App() {
-  const { isAdminOpen, settings } = useStore();
+  const [products, setProducts] = useState([]); // هادي باش نحفظو فيها المنتجات
 
-  // Initialize Facebook Pixel
   useEffect(() => {
+    const fetchProducts = async () => {
+      const querySnapshot = await getDocs(collection(db, "products"));
+      const productsData = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data()
+      }));
+      setProducts(productsData);
+      console.log("المنتجات اللي جبنا:", productsData);
+    };
+    
+    fetchProducts();
+  }, []);
+
+  // ... باقي الكود ديالك ...
     if (settings.facebookPixelId) {
       const script = document.createElement('script');
       script.innerHTML = `
