@@ -1,19 +1,21 @@
 // ===== Firebase Configuration =====
 // هذا الملف يوفر اتصال بقاعدة البيانات
 
-import { initializeApp } from 'firebase/app'; 
-import { import { getFirestore } from 'firebase/firestore';
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore'; 
 
-// ===== الإعدادات - تم تحديثها =====
 const firebaseConfig = {
-  apiKey: "AIzaSyBxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-  authDomain: "bh-cosmetics-store.firebaseapp.com",
-  databaseURL: "https://bh-cosmetics-store-default-rtdb.firebaseio.com",
-  projectId: "bh-cosmetics-store",
-  storageBucket: "bh-cosmetics-store.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:xxxxxxxxxxxxxx"
+  // خلي هاد المعلومات كيما هي عندك في الملف القديم (لا تغيريها)
+  apiKey: "...", 
+  authDomain: "...",
+  projectId: "...",
+  storageBucket: "...",
+  messagingSenderId: "...",
+  appId: "..."
 };
+
+const app = initializeApp(firebaseConfig);
+export const db = getFirestore(app); // هاد السطر هو اللي كيخلينا نعيطو لقاعدة البيانات Firestore
 
 // ===== تهيئة Firebase =====
 let app: any = null;
